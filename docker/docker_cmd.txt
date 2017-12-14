@@ -1,7 +1,11 @@
 
 #jenkins_dind
-docker run -p 18080:8080 -v /app/jenkins/docker-vol:/var/jenkins_home --privileged --name=jenkins-dind chupda/jenkins-dind:2.60.3
+docker run -p 18080:8080 -v /app/jenkins/docker-vol:/var/jenkins_home --privileged --name=jenkins-dind chupda/jenkins-dind:2.60.3.1
+JAVA_HOME=/docker-java-home
+openjdk version "1.8.0_151"
+
 
 # jboss
 docker run -p 9090:8080 --name jboss chupdachups/jboss-wildfly:latest
 docker build --no-cache -t chupdachups/jboss-wildfly:latest .
+
