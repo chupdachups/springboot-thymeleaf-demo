@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+
+
 //@SpringBootApplication
 //public class DemoApplication {
 //
@@ -14,14 +16,28 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 //}
 
 
+//tomcat war
+//@SpringBootApplication
+//public class DemoApplication extends SpringBootServletInitializer {
+//	@Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(DemoApplication.class);
+//    }
+//	public static void main(String[] args) throws Exception {
+//        SpringApplication.run(DemoApplication.class, args);
+//    }
+//}
 
+
+//jboss war
 @SpringBootApplication
 public class DemoApplication extends SpringBootServletInitializer {
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(DemoApplication.class);
-    }
-	public static void main(String[] args) throws Exception {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	    return application.sources(DemoApplication.class);
+	}
+	
+	public static void main(String[] args) {
+	    SpringApplication.run(DemoApplication.class, args);
+	}
 }
